@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Recipe Book</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background-color: #ff6f61;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 30px;
+    }
+    .featured {
+      margin-top: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .featured img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    .categories {
+      margin-top: 40px;
+    }
+    .categories a {
+      display: inline-block;
+      background: #ffe0b2;
+      color: #333;
+      padding: 10px 15px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="add-recipe.html">Add Recipe</a>
+      <a href="recipe-list.html">Recipe List</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Welcome Section -->
+    <section>
+      <h1>Welcome to My Recipe Book</h1>
+      <p>"Welcome to the delicious world of flavors! Discover the best recipes and make cooking more enjoyable than ever!"</p>
+    </section>
+
+    <!-- Recipe of the Day -->
+    <section class="featured">
+      <h2>Recipe of the Day: vanilla Cake</h2>
+      <p>Vanilla cake is one of the most delicious and popular cakes and you can make it in two ways: vanilla and chocolate
+        . The ingredients for this cake can be found in every home today and you can make this delicious cake for breakfast or dinner.</p>
+      <img src="cake1.jpg" alt="vanilla Cake">
+      <p><a href="recipe-details.html">View Full Recipe</a></p>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+      <h2>Featured Categories</h2>
+      <a href="recipe-list.html#desserts">Desserts</a>
+      <a href="recipe-list.html#vegan">family classics</a>
+      <a href="recipe-list.html#quick">Trending recipes</a>
+      <a href="recipe-list.html#appetizers">Appetizers</a>
+    </section>
+  </div>
+
+</body>
+</html>

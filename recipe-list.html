@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe List</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ff6f61;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .filter {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filter select {
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 10px 5px;
+    }
+
+    .card p {
+      padding: 0 10px;
+      color: #555;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #ff6f61;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="add-recipe.html">Add Recipe</a>
+      <a href="recipe-list.html">Recipe List</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>All Recipes</h1>
+
+    <!-- Category Filter -->
+    <div class="filter">
+      <label for="category">Filter by Category: </label>
+      <select id="category" onchange="filterRecipes()">
+        <option value="all">All</option>
+        <option value="Desserts">Desserts</option>
+        <option value="family classics">family classics</option>
+        <option value="tranding food">tranding food</option>
+        <option value="Appetizers">Appetizers</option>
+      </select>
+    </div>
+
+    <!-- Recipe Gallery -->
+    <div class="gallery" id="recipe-gallery">
+      <div class="card" data-category="Desserts">
+        <img src="cake2.jpg" alt="vanilla Cake">
+        <h3>Chocolate Cake</h3>
+        <p>Rich and moist cake, perfect for any occasion.</p>
+        <a href="recipe-details.html">View Recipe</a>
+      </div>
+
+      <div class="card" data-category="family classics">
+        <img src="mantu2.jpg" alt="family classics">
+        <h3>family classics</h3>
+        <p>traditional and delicious Afghan food</p>
+        <a href="recipe-details.html">View Recipe</a>
+      </div>
+
+      <div class="card" data-category="tranding food">
+        <img src="sushi1.jpg" alt="tranding food">
+        <h3>tranding food</h3>
+        <p>Sushi Basic Roll</p>
+        <a href="recipe-details.html">View Recipe</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterRecipes() {
+      const category = document.getElementById("category").value;
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        if (category === "all" || card.dataset.category === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
